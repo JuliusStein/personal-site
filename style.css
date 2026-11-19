@@ -98,10 +98,18 @@ a.blue { color: rgba(0, 43, 255, 0.75); }
 .subpage { max-width: 40rem; padding: 2rem; }
 
 /* Mobile: single column */
+.section-divider { display: none; }
+
 @media (max-width: 800px) {
-  html { font-size: 16px; }
-  .panel { position: static; width: 100%; max-height: none; padding: 1.5rem; }
+  /* Mono type is wide, so keep body text ~14px on phones (was ~19px) */
+  html { font-size: 11.5px; -webkit-text-size-adjust: 100%; }
+  body { line-height: 1.35; }
+  p { margin-bottom: 1em; }
+  .panel { position: static; width: 100%; max-height: none; padding: 1.25rem 1.5rem 0; overflow: visible; }
+  .section-divider { display: block; margin: 1.5rem 1.5rem 0; }
   .projects { width: 100%; max-width: 100%; padding: 1.5rem; min-height: 0; }
+  .col-meta .icon { width: 1.8rem; height: 1.8rem; }
+  hr { margin: 1.5em 0; }
   .project, .detail-grid { grid-template-columns: 1fr; gap: 1rem; }
   .media-grid { grid-template-columns: repeat(2, 1fr); }
   .copyright { position: static; width: 100%; padding: 0 1.5rem 1.5rem; }
